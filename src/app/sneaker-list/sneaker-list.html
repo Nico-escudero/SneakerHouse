@@ -9,12 +9,13 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let sneaker of sneakers">
-            <td><img class="img-sneaker" [src]="sneaker.image" [alt]="sneaker.name"></td>
+        <tr *ngFor="let sneaker of sneakers" [ngClass]="{'clearance':sneaker.clearance}">
+            <td><img class=" img-sneaker" [src]="sneaker.image" [alt]="sneaker.name">
+            </td>
             <td>{{ sneaker.name }}</td>
             <td>{{ sneaker.type }}</td>
-            <td>${{ sneaker.price }}</td>
-            <td>{{ sneaker.stock }}</td>
+            <td>{{ sneaker.price | currency }}</td>
+            <td> <span class="badge text-bg-warning" *ngIf="sneaker.stock==0">SIN STOCK</span></td>
         </tr>
     </tbody>
 </table>

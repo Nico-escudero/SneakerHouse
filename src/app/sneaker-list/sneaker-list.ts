@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Sneaker } from './sneaker';
 
 @Component({
   selector: 'app-sneaker-list',
@@ -7,25 +8,28 @@ import { Component } from '@angular/core';
   styleUrl: './sneaker-list.scss',
 })
 export class SneakerList {
-  sneakers = [{
-    "name": "Jordan 1",
-    "type": "Deportiva",
-    "price": 150,
-    "stock": 10,
-    "image": "assets/img/jordan1.jpg"
+  sneakers: Sneaker[] = [{
+    name: 'Jordan 1',
+    type: 'Deportiva',
+    price: 180,
+    stock: 5,
+    image: 'assets/img/jordan1.jpg',
+    clearance: false
   },
   {
-    "name": "Vans Knu",
-    "type": "Urbanas",
-    "price": 120,
-    "stock": 15,
-    "image": "assets/img/vansknu.jpg"
+    name: 'Vans Knu',
+    type: 'Urbanas',
+    price: 200,
+    stock: 3,
+    image: 'assets/img/vansknu.jpg',
+    clearance: true
   },
   {
-    "name": "Converse Chuck",
-    "type": "Clásicas",
-    "price": 100,
-    "stock": 20,
-    "image": "assets/img/conversechuck.jpg"
+    name: 'Converse Chuck',
+    type: 'Clásicas',
+    price: 180,
+    stock: 0,
+    image: 'assets/img/conversechuck.jpg',
+    clearance: false
   }];
 }
