@@ -1,0 +1,20 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>Imagen</th>
+            <th>Nombre</th>
+            <th>Tipo</th>
+            <th>Precio</th>
+            <th>Stock</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let sneaker of sneakers">
+            <td><img class="img-sneaker" [src]="sneaker.image" [alt]="sneaker.name"></td>
+            <td>{{ sneaker.name }}</td>
+            <td>{{ sneaker.type }}</td>
+            <td>${{ sneaker.price }}</td>
+            <td>{{ sneaker.stock }}</td>
+        </tr>
+    </tbody>
+</table>
