@@ -1,21 +1,40 @@
+<h1>Lista de sneakers</h1>
 <table class="table">
     <thead>
         <tr>
-            <th>Imagen</th>
+            <th></th>
             <th>Nombre</th>
             <th>Tipo</th>
             <th>Precio</th>
             <th>Stock</th>
+            <th>Compra</th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let sneaker of sneakers" [ngClass]="{'clearance':sneaker.clearance}">
-            <td><img class=" img-sneaker" [src]="sneaker.image" [alt]="sneaker.name">
+        @for (sneaker of sneakers; track sneaker.id) {
+        <tr [ngClass]="{'clearance':sneaker.clearance}">
+            <td><img width="80px" class="img-thumbnail img-sneaker" [src]="sneaker.image" [alt]="sneaker.name">
             </td>
             <td>{{ sneaker.name }}</td>
             <td>{{ sneaker.type }}</td>
             <td>{{ sneaker.price | currency }}</td>
-            <td> <span class="badge text-bg-warning" *ngIf="sneaker.stock==0">SIN STOCK</span></td>
+            @if (sneaker.stock > 0) {
+            <td></td>
+            <td>
+                <button class="btn btn-danger" (click)="downQuantity(sneaker)">-</button> <input class="inputQuantity"
+                    type="text" [(ngModel)]="
+                                                sneaker.quantity" (keyup)="changeQuantity($event, sneaker)"> <button
+                    class="btn btn-success" (click)="upQuantity(sneaker)">+</button>
+            </td>
+            } @else {
+            <td> <span class="badge text-bg-warning">SIN STOCK</span></td>
+            <td></td>
+            }
         </tr>
+        }@empty {
+        <tr>
+            <td colspan="5" class="text-center">No hay zapatillas disponibles.</td>
+        </tr>
+        }
     </tbody>
 </table>
