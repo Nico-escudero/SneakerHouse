@@ -1,1 +1,10 @@
 <h1>Carrito de compras</h1>
+<ul>
+    @for (sneaker of cartList$ | async; track sneaker.id) {
+    <li>
+        {{ sneaker.name }}: {{ sneaker.quantity }}
+    </li>
+    }@empty {
+    <li>No hay productos en el carrito.</li>
+    }
+</ul>

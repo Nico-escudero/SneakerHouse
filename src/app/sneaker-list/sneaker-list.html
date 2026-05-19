@@ -7,6 +7,7 @@
             <th>Tipo</th>
             <th>Precio</th>
             <th>Stock</th>
+            <th>Cantidad</th>
             <th>Compra</th>
         </tr>
     </thead>
@@ -20,14 +21,11 @@
             <td>{{ sneaker.price | currency }}</td>
             @if (sneaker.stock > 0) {
             <td></td>
-            <td>
-                <button class="btn btn-danger" (click)="downQuantity(sneaker)">-</button> <input class="inputQuantity"
-                    type="text" [(ngModel)]="
-                                                sneaker.quantity" (keyup)="changeQuantity($event, sneaker)"> <button
-                    class="btn btn-success" (click)="upQuantity(sneaker)">+</button>
-            </td>
+            <td><app-input-integer [(quantity)]="sneaker.quantity" [max]="sneaker.stock"
+                    (maxReached)="maxReached($event)"></app-input-integer></td>
+            <td><button class="btn btn-primary" (click)="addToCart(sneaker)">Agregar al carrito</button></td>
             } @else {
-            <td> <span class="badge text-bg-warning">SIN STOCK</span></td>
+            <td><span class=" badge text-bg-warning">SIN STOCK</span></td>
             <td></td>
             }
         </tr>

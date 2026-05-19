@@ -8,9 +8,10 @@ import { FormsModule } from '@angular/forms';
 import { SneakerHouseAbout } from './sneaker-house-about/sneaker-house-about';
 import { SneakerHouseSneaker } from './sneaker-house-sneaker/sneaker-house-sneaker';
 import { Cart } from './cart/cart';
+import { InputInteger } from './input-integer/input-integer';
 
 @NgModule({
-  declarations: [App, SneakerList, SneakerHouseAbout, SneakerHouseSneaker, Cart],
+  declarations: [App, SneakerList, SneakerHouseAbout, SneakerHouseSneaker, Cart, InputInteger],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [provideBrowserGlobalErrorListeners(), provideClientHydration(withEventReplay())],
   bootstrap: [App],

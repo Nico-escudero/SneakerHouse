@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Sneaker } from './sneaker';
+import { SneakerCart } from '../sneaker-cart';
 
 @Component({
   selector: 'app-sneaker-list',
@@ -39,23 +40,16 @@ export class SneakerList {
     quantity: 0
   }];
 
-  upQuantity(sneaker: Sneaker): void {
-    if (sneaker.quantity < sneaker.stock) {
-      sneaker.quantity++;
-    }
+  constructor(private cart: SneakerCart) {
   }
 
-  downQuantity(sneaker: Sneaker): void {
-    if (sneaker.quantity > 0) {
-      sneaker.quantity--;
-    }
+  addToCart(sneaker: Sneaker): void {
+    this.cart.addTocart(sneaker);
+    sneaker.stock -= sneaker.quantity;
+    sneaker.quantity = 0;
   }
 
-  changeQuantity(event: KeyboardEvent, sneaker: Sneaker): void {
-    if ((event.key >= '1' && event.key <= '9') && (event.key <= sneaker.stock.toString())) {
-      console.log(event.key);
-    } else {
-      event.preventDefault();
-    }
+  maxReached(message: string): void {
+    alert(message);
   }
 }
