@@ -1,8 +1,191 @@
-table .clearance {
-    border: 2px solid green;
-    --bs-table-bg: lightgreen;
+.price-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin: 10px 0;
+}
+
+.clearance {
+    background: linear-gradient(135deg, #28c76f, #20a85a);
+
+    color: white;
+
+    font-weight: bold;
+    font-size: 20px;
+
+    padding: 8px 16px;
+
+    border-radius: 12px;
+
+    box-shadow: 0px 4px 12px rgba(40, 199, 111, 0.35);
+
+    animation: pulse 2s infinite;
+}
+
+.sale-badge {
+    background: #ff3b30;
+
+    color: white;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    padding: 4px 10px;
+
+    border-radius: 999px;
+
+    margin-bottom: 6px;
+
+    letter-spacing: 1px;
 }
 
 tbody {
     vertical-align: middle;
+}
+
+.card-sneaker {
+    width: 220px;
+    min-height: 320px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    text-align: center;
+
+    padding: 15px;
+
+    border: 1px solid #ccc;
+    border-radius: 14px;
+
+    background: white;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.card-sneaker:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.img-wrapper {
+    position: relative;
+}
+
+.out-stock-wrapper {
+    opacity: 0.6;
+
+    filter: grayscale(100%);
+}
+
+.out-stock-wrapper::after {
+    content: "";
+
+    position: absolute;
+
+    top: 50%;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background: red;
+
+    transform: rotate(-20deg);
+
+    border-radius: 999px;
+}
+
+.img-sneaker {
+    width: 200px;
+    height: 200px;
+
+    object-fit: contain;
+
+    transition:
+        transform 0.3s ease,
+        filter 0.3s ease;
+
+    cursor: pointer;
+}
+
+.img-sneaker:hover {
+    transform: scale(1.05);
+
+    filter: drop-shadow(0px 6px 10px rgba(0, 0, 0, 0.35));
+}
+
+.sneaker-name {
+    min-height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: 600;
+
+    text-align: center;
+
+    margin-top: 10px;
+}
+
+.custom-toast {
+    position: fixed;
+
+    top: 20px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background: #ff9800;
+
+    color: white;
+
+    padding: 14px 24px;
+
+    border-radius: 12px;
+
+    font-weight: 600;
+
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.2);
+
+    z-index: 9999;
+
+    animation: slideDown 0.3s ease;
+}
+
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes slideDown {
+
+    from {
+        transform: translateX(-50%) translateY(-20px);
+
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(-50%) translateY(0);
+
+        opacity: 1;
+    }
+
 }

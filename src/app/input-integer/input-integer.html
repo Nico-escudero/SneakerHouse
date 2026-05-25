@@ -1,3 +1,13 @@
-<button class="btn btn-danger" (click)="downQuantity()">-</button> <input class="inputQuantity" type="text"
-        [(ngModel)]="quantity" (keyup)="changeQuantity($event )"> <button class="btn btn-success"
-        (click)="upQuantity()">+</button>
+<div class="quantity-container">
+
+        <button class="btn-quantity btn-minus" (click)="downQuantity()">
+                -
+        </button>
+
+        <input class="inputQuantity" type="text" [(ngModel)]="quantity" (keyup)="changeQuantity($event )">
+
+        <button class="btn-quantity btn-plus" (click)="upQuantity()">
+                +
+        </button>
+
+</div>

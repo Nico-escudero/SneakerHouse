@@ -1,10 +1,44 @@
-<h1>Carrito de compras</h1>
-<ul>
+<h1 class="cart-title">
+    Carrito de compras
+</h1>
+
+<div class="cart-container">
+
     @for (sneaker of cartList$ | async; track sneaker.id) {
-    <li>
-        {{ sneaker.name }}: {{ sneaker.quantity }}
-    </li>
-    }@empty {
-    <li>No hay productos en el carrito.</li>
+
+    <div class="cart-item">
+
+        <img class="img-cart" [src]="sneaker.image" [alt]="sneaker.name">
+
+        <div class="cart-info">
+
+            <div class="cart-name">
+                {{ sneaker.name }}
+            </div>
+
+            <div class="cart-quantity">
+                Cantidad: {{ sneaker.quantity }}
+            </div>
+
+            <div class="cart-price">
+                {{ sneaker.quantity }} x
+                {{ sneaker.price | currency}}
+            </div>
+
+            <div class="cart-total">
+                Total:
+                {{ sneaker.price * sneaker.quantity | currency }}
+            </div>
+
+        </div>
+    </div>
+
+    } @empty {
+
+    <div class="empty-cart">
+        No hay productos en el carrito.
+    </div>
+
     }
-</ul>
+
+</div>
