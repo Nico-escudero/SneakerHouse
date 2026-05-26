@@ -11,6 +11,7 @@ import { SneakerData } from '../sneaker-data';
 })
 export class SneakerList {
   sneakers: Sneaker[] = [];
+  alertMessage: string = '';
 
   constructor(private cart: SneakerCart, private sneakerDataService: SneakerData) {
   }
@@ -21,12 +22,14 @@ export class SneakerList {
   }
 
   addToCart(sneaker: Sneaker): void {
-    this.cart.addTocart(sneaker);
-    sneaker.stock -= sneaker.quantity;
-    sneaker.quantity = 0;
+    if (sneaker.quantity > 0) {
+      this.cart.addTocart(sneaker);
+      sneaker.stock -= sneaker.quantity;
+      sneaker.quantity = 0;
+    } else {
+      this.alertMessage = 'Debes seleccionar al menos 1 unidad';
+    }
   }
-
-  alertMessage: string = '';
 
   maxReached(message: string): void {
     this.alertMessage = message;

@@ -12,9 +12,16 @@ import { Cart } from './cart/cart';
 import { InputInteger } from './input-integer/input-integer';
 
 @NgModule({
-  declarations: [App, SneakerList, SneakerHouseAbout, SneakerHouseSneaker, Cart, InputInteger],
+  declarations: [
+    App,
+    SneakerList,
+    SneakerHouseAbout,
+    SneakerHouseSneaker,
+    Cart,
+    InputInteger,
+  ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [provideBrowserGlobalErrorListeners(), provideClientHydration(withEventReplay())],
   bootstrap: [App],
 })
-export class AppModule { }
+export class AppModule {}

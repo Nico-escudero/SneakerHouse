@@ -36,10 +36,13 @@ export class InputInteger {
     if (this.quantity > 0) {
       this.quantity--;
       this.quantityChange.emit(this.quantity);
+    } else {
+      this.maxReached.emit('La cantidad no puede ser menor a 0');
     }
   }
 
   changeQuantity(event: KeyboardEvent): void {
+
     if ((event.key >= '1' && event.key <= '9') && (event.key <= this.max.toString())) {
       console.log(event.key);
       this.quantity = parseInt(event.key);
@@ -47,5 +50,7 @@ export class InputInteger {
       event.preventDefault();
     }
   }
+
+  
 }
 

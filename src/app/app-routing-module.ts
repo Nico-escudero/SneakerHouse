@@ -6,16 +6,17 @@ import { SneakerHouseAbout } from './sneaker-house-about/sneaker-house-about';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'sneakers',
+    redirectTo: 'home',
     pathMatch: 'full'
   },
   {
-    path: 'sneakers',
+    path: 'home',
     component: SneakerHouseSneaker
   }, {
     path: 'about',
     component: SneakerHouseAbout
   }
+
 ];
 
 @NgModule({
