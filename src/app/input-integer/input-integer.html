@@ -4,7 +4,7 @@
                 -
         </button>
 
-        <input class="inputQuantity" type="text" [(ngModel)]="quantity" (keyup)="changeQuantity($event )">
+        <input class="inputQuantity" [(ngModel)]="quantity" (keydown)="changeQuantity($event)">
 
         <button class="btn-quantity btn-plus" (click)="upQuantity()">
                 +

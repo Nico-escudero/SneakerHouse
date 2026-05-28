@@ -41,16 +41,29 @@ export class InputInteger {
     }
   }
 
-  changeQuantity(event: KeyboardEvent): void {
+  changeQuantity(event: KeyboardEvent) {
+    const allowedKeys = [
+      'Backspace',
+      'ArrowLeft',
+      'ArrowRight',
+      'Enter',
+    ];
 
-    if ((event.key >= '1' && event.key <= '9') && (event.key <= this.max.toString())) {
-      console.log(event.key);
-      this.quantity = parseInt(event.key);
-    } else {
+    const isNumber = /^[0-9]$/.test(event.key);
+    const isAllowed = allowedKeys.includes(event.key);
+
+    if (!isNumber && !isAllowed) {
       event.preventDefault();
+    }
+
+    if (event.key == 'Enter') {
+      if (this.quantity > this.max) {
+        this.quantity = this.max;
+        this.quantityChange.emit(this.quantity);
+      }
     }
   }
 
-  
+
 }
 
