@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SneakerHouseSneaker } from './sneaker-house-sneaker/sneaker-house-sneaker';
 import { SneakerHouseAbout } from './sneaker-house-about/sneaker-house-about';
+import { Form } from './form/form';
 
 const routes: Routes = [
   {
@@ -15,7 +16,11 @@ const routes: Routes = [
   }, {
     path: 'about',
     component: SneakerHouseAbout
+  }, {
+    path: 'newSneaker',
+    component: Form
   }
+
 
 ];
 

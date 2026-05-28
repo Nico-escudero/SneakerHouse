@@ -1,10 +1,16 @@
+.footer,
+.custom-navbar {
+    background: linear-gradient(135deg, #111827, #1f2937);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
 .footer {
-    background-color: #f8f9fa;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100px;
+    color: #e5e7eb;
 }
 
 .section-redes {
@@ -12,4 +18,46 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+}
+
+.custom-navbar {
+    padding: 1rem 0;
+    margin-bottom: 1rem;
+}
+
+.navbar-brand {
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.navbar-brand:hover {
+    transform: scale(1.05);
+}
+
+.nav-custom {
+    color: #e5e7eb !important;
+    font-weight: 500;
+    margin: 0 10px;
+    position: relative;
+    transition: 0.3s;
+}
+
+.nav-custom::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: 0.3s;
+    transform: translateX(-50%);
+}
+
+.nav-custom:hover::after {
+    width: 100%;
+}
+
+.nav-custom:hover {
+    color: white !important;
 }

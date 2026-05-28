@@ -1,5 +1,5 @@
 export interface Sneaker {
-    id: number;
+    id?: number;
     name: string;
     type: string;
     price: number;

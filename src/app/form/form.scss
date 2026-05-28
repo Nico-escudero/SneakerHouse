@@ -1,0 +1,83 @@
+.form-card {
+    max-width: 850px;
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.form-header h2 {
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.form-header p {
+    color: #6b7280;
+    margin: 0;
+}
+
+.custom-toast {
+    position: fixed;
+
+    top: 20px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background: #4CAF50;
+
+    color: white;
+
+    padding: 14px 24px;
+
+    border-radius: 12px;
+
+    font-weight: 600;
+
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.2);
+
+    z-index: 9999;
+
+    animation: slideDown 0.3s ease;
+}
+
+.custom-input {
+    border-radius: 12px;
+    padding: 12px;
+    border: 1px solid #dcdcdc;
+    transition: all 0.3s ease;
+}
+
+.custom-input:focus {
+    border-color: #111827;
+    box-shadow: 0 0 0 0.2rem rgba(17, 24, 39, 0.15);
+}
+
+button {
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+button:not(:disabled):hover {
+    transform: translateY(-2px);
+}
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+.btn-success {
+    background-color: #22c55e !important;
+    border-color: #22c55e !important;
+    color: white;
+}
+
+.btn-success:hover {
+    box-shadow: 0 8px 25px rgba(25, 135, 84, 0.4);
+}

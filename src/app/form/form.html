@@ -1,0 +1,84 @@
+<div class="container py-5">
+    <div class="form-card mx-auto">
+        @if(successMessage){
+        <div class="custom-toast">
+            {{ successMessage }}
+        </div>
+        }
+
+        <div class="form-header">
+            <h2>👟 Nueva Zapatilla</h2>
+            <p>Completá los datos para agregar un nuevo producto al catálogo</p>
+        </div>
+
+        <form [formGroup]="profileform" (ngSubmit)="onSubmit()">
+
+            <div class="row g-4">
+
+                <div class="col-md-6">
+                    <label class="form-label">Nombre</label>
+                    <input type="text" class="form-control custom-input" formControlName="name"
+                        placeholder="Air Max 90">
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label">Marca</label>
+                    <input type="text" class="form-control custom-input" formControlName="type" placeholder="Nike">
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label">Precio</label>
+                    <div class="input-group">
+                        <span class="input-group-text">$</span>
+                        <input (keydown)="changeQuantity($event)" type="text" class="form-control custom-input"
+                            formControlName="price">
+                    </div>
+                    @if(profileform.get('price')?.hasError('invalidInput')) {
+                    <div class="text-danger small mt-2">
+                        El precio debe ser mayor a 0 </div>
+                    }
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label">Stock</label>
+                    <input (keydown)="changeQuantity($event)" type="text" class="form-control custom-input"
+                        formControlName="stock">
+                    @if(profileform.get('stock')?.hasError('invalidInput')) {
+                    <div class="text-danger small mt-2">
+                        El stock debe ser mayor a 0 </div>
+                    }
+                </div>
+
+
+                <div class="col-12">
+                    <label class="form-label">Imagen</label>
+                    <input type="text" class="form-control custom-input" formControlName="image"
+                        placeholder="https://...">
+
+                    @if(profileform.get('image')?.hasError('invalidHttps')) {
+                    <div class="text-danger small mt-2">
+                        La URL debe comenzar con https://
+                    </div>
+                    }
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label">¿Está en oferta?</label>
+                    <select class="form-select custom-input" formControlName="clearance">
+                        <option [ngValue]="true">Sí</option>
+                        <option [ngValue]="false">No</option>
+                    </select>
+                </div>
+
+                <div class="col-md-6 d-flex align-items-end">
+                    <button type="submit" class="w-100 py-3 fw-semibold" [class.btn-success]="profileform.valid"
+                        [class.btn-secondary]="profileform.invalid" [disabled]="profileform.invalid">
+                        Guardar Producto
+                    </button>
+                </div>
+
+            </div>
+        </form>
+
+    </div>
+</div>
