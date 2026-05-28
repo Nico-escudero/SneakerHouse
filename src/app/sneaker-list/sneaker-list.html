@@ -17,7 +17,7 @@
 
         <div class="img-wrapper" [ngClass]="{'out-stock-wrapper': sneaker.stock == 0}">
 
-            <img class="img-sneaker" [src]="sneaker.image" [alt]="sneaker.name">
+            <img class="img-sneaker" loading="lazy" [src]="sneaker.image" [alt]="sneaker.name">
 
         </div>
 
