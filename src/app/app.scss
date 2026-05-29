@@ -1,3 +1,14 @@
+:host {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1;
+}
+
 .footer,
 .custom-navbar {
     background: linear-gradient(135deg, #111827, #1f2937);
@@ -5,12 +16,16 @@
 }
 
 .footer {
+    min-height: 100px;
+
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    height: 100px;
+    align-items: center;
+
     color: #e5e7eb;
+
+    margin-top: auto;
 }
 
 .section-redes {
@@ -21,43 +36,100 @@
 }
 
 .custom-navbar {
-    padding: 1rem 0;
-    margin-bottom: 1rem;
+    background: rgba(17, 24, 39, 0.95);
+    backdrop-filter: blur(10px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    padding: 0.8rem 0;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    margin-bottom: 20px;
 }
 
-.navbar-brand {
-    letter-spacing: 1px;
-    transition: 0.3s;
+.navbar-brand img {
+    height: 70px;
+    transition: all .3s ease;
 }
 
-.navbar-brand:hover {
-    transform: scale(1.05);
+.navbar-brand:hover img {
+    transform: scale(1.08) rotate(-2deg);
 }
 
 .nav-custom {
-    color: #e5e7eb !important;
-    font-weight: 500;
-    margin: 0 10px;
+    color: #d1d5db !important;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    margin: 0 12px;
+
     position: relative;
-    transition: 0.3s;
+
+    transition: all .3s ease;
 }
 
 .nav-custom::after {
     content: '';
+
     position: absolute;
-    bottom: -4px;
+
     left: 50%;
+    bottom: -6px;
+
     width: 0;
-    height: 2px;
-    background-color: white;
-    transition: 0.3s;
+    height: 3px;
+
+    border-radius: 999px;
+
+    background: linear-gradient(90deg,
+            #0d6efd,
+            #4f9cff);
+
     transform: translateX(-50%);
+    transition: width .3s ease;
+}
+
+.nav-custom:hover {
+    color: white !important;
 }
 
 .nav-custom:hover::after {
     width: 100%;
 }
 
-.nav-custom:hover {
+.btn-add-sneaker {
+    background: linear-gradient(135deg,
+            #0d6efd,
+            #0b5ed7);
+
     color: white !important;
+
+    border: none;
+
+    padding: 10px 22px;
+
+    border-radius: 999px;
+
+    font-weight: 600;
+
+    transition: all .3s ease;
+}
+
+.btn-add-sneaker:hover {
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 20px rgba(13, 110, 253, .35);
+
+    color: white !important;
+}
+
+.active-link {
+    color: white !important;
+}
+
+.active-link::after {
+    width: 100%;
 }

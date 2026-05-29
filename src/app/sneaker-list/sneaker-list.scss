@@ -77,6 +77,16 @@ tbody {
     position: relative;
 }
 
+.out-stock {
+    display: inline-block;
+    margin-top: 15px;
+    background: #dc3545;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
 .out-stock-wrapper {
     opacity: 0.6;
 
@@ -134,29 +144,50 @@ tbody {
     margin-top: 10px;
 }
 
-.custom-toast {
-    position: fixed;
 
-    top: 20px;
-    left: 50%;
+.btn-detail {
+    width: 100%;
+    margin-top: 12px;
 
-    transform: translateX(-50%);
+    border: none;
+    border-radius: 12px;
 
-    background: #ff9800;
+    padding: 12px 18px;
+
+    background: linear-gradient(135deg,
+            #0d6efd,
+            #0a58ca);
 
     color: white;
 
-    padding: 14px 24px;
-
-    border-radius: 12px;
-
     font-weight: 600;
+    font-size: 15px;
 
-    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
 
-    z-index: 9999;
+    cursor: pointer;
 
-    animation: slideDown 0.3s ease;
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease,
+        background .2s ease;
+}
+
+.btn-detail:hover {
+    transform: translateY(-2px);
+
+    box-shadow: 0 6px 16px rgba(13, 110, 253, .35);
+}
+
+.btn-detail:hover svg {
+    transform: translateX(4px);
+}
+
+.btn-detail svg {
+    transition: transform .2s ease;
 }
 
 
@@ -172,20 +203,4 @@ tbody {
     100% {
         transform: scale(1);
     }
-}
-
-@keyframes slideDown {
-
-    from {
-        transform: translateX(-50%) translateY(-20px);
-
-        opacity: 0;
-    }
-
-    to {
-        transform: translateX(-50%) translateY(0);
-
-        opacity: 1;
-    }
-
 }

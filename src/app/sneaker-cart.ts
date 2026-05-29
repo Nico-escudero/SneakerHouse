@@ -17,7 +17,6 @@ export class SneakerCart {
     } else {
       item.quantity += sneaker.quantity;
     }
-    console.log(this._cartList);
     this.cartList.next(this._cartList);
   }
 }
