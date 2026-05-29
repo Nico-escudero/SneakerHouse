@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { SneakerHouseSneaker } from './sneaker-house-sneaker/sneaker-house-sneaker';
 import { SneakerHouseAbout } from './sneaker-house-about/sneaker-house-about';
 import { Form } from './form/form';
+import { SneakerDetail } from './sneaker-detail/sneaker-detail';
 
 const routes: Routes = [
   {
@@ -14,13 +15,16 @@ const routes: Routes = [
     path: 'home',
     component: SneakerHouseSneaker
   }, {
+    path: 'sneakers/:id',
+    component: SneakerDetail
+  },
+  {
     path: 'about',
     component: SneakerHouseAbout
   }, {
     path: 'newSneaker',
     component: Form
   }
-
 
 ];
 

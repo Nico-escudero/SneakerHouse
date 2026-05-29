@@ -1,6 +1,4 @@
 <h1>Lista de sneakers</h1>
-
-
 @if (alertMessage) {
 
 <div class="custom-toast">
@@ -10,6 +8,7 @@
 }
 
 <div class="d-flex flex-wrap gap-3">
+
 
     @for (sneaker of sneakers; track sneaker.id) {
 
@@ -38,6 +37,10 @@
             </div>
 
         </div>
+
+        <button [routerLink]="['/sneakers', sneaker.id]">
+            Ver detalle
+        </button>
 
         @if (sneaker.stock > 0) {
 

@@ -1,0 +1,7 @@
+@if (sneaker) {
+<h1>{{ sneaker.name }}</h1>
+<img width="200" height="200" loading="lazy" [src]="sneaker.image" [alt]="sneaker.name">
+<p>Marca: {{ sneaker.type }}</p>
+<p>Precio: {{ sneaker.price }}</p>
+<p>Stock: {{ sneaker.stock }}</p>
+}

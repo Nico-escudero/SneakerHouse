@@ -12,6 +12,7 @@ import { Cart } from './cart/cart';
 import { InputInteger } from './input-integer/input-integer';
 import { Form } from './form/form';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SneakerDetail } from './sneaker-detail/sneaker-detail';
 
 @NgModule({
   declarations: [
@@ -22,9 +23,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     Cart,
     InputInteger,
     Form,
+    SneakerDetail,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, ReactiveFormsModule],
-  providers: [provideBrowserGlobalErrorListeners(), provideClientHydration(withEventReplay())],
+  providers: [provideBrowserGlobalErrorListeners()],
   bootstrap: [App],
 })
 export class AppModule { }

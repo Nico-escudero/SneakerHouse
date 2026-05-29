@@ -16,6 +16,10 @@ export class SneakerData {
     return this.http.get<Sneaker[]>(API_URL);
   }
 
+  public getById(id: number): Observable<Sneaker> {
+    return this.http.get<Sneaker>(`${API_URL}/${id}`);
+  }
+
   addSneaker(sneaker: Sneaker) {
     return this.http.post<Sneaker>(API_URL, sneaker);
   }
